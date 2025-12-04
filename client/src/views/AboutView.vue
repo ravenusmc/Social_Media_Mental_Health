@@ -91,7 +91,7 @@ export default {
   width: 100%;
   height: 400px;
   border-radius: 10px;
-  background: url("../assets/images/Cuddy.jpg") center/cover no-repeat;
+  background: url("../assets/images/person.jpg") center/cover no-repeat;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
 }
 
