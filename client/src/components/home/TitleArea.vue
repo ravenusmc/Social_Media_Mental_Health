@@ -29,4 +29,12 @@ export default {
   align-items: center;
 }
 
+.title-box {
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  color: white;
+  text-transform: uppercase;
+  padding: 25px; 
+}
+
 </style>
