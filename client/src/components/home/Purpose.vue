@@ -16,6 +16,10 @@
 
 </script>
 
-<stlye scoped>
+<style scoped>
 
-</stlye>
+.main-div {
+  border: 2px solid red; 
+}
+
+</style>
