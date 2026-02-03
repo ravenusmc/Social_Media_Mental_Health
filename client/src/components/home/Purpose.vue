@@ -28,6 +28,12 @@
   border: 2px solid red; 
   display: grid; 
   grid-template-columns: 1fr 1fr;
+  margin: 5%;
+}
+
+h2 {
+  text-align: center;
+  text-transform: uppercase;
 }
 
 .into-paragraph {
@@ -35,7 +41,15 @@
 }
 
 .picture-div {
-  
+  width: 100%;
+  height: 650px;
+  border-radius: 10px;
+  background: url("../../assets/images/div_landing_photo.jpg") center/cover no-repeat;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+  display: flex; 
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 </style>
