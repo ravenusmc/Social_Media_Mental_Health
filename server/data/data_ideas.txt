@@ -2,6 +2,13 @@ This file will be used to brainstorm what types of graphs I will make.
 Age,Gender,Daily_Screen_Time(hrs),Sleep_Quality(1-10),Stress_Level(1-10),Days_Without_Social_Media,Exercise_Frequency(week),
 Social_Media_Platform,Happiness_Index(1-10)
 
+HELP - Previous projects 
+https://github.com/ravenusmc/Everest_Study/tree/main/client/src/components
+
+DATA HOME PAGE: 
+https://github.com/ravenusmc/Everest_Study/blob/main/client/src/views/DataView.vue
+
+
 Filters: 
 Gender - male, female, both
 age - allow people to look at only certain age ranges. 
