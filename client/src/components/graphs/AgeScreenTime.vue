@@ -1,7 +1,7 @@
 <template>
   <div>
     test
-    <div ref="CauseOfDeathGraph"></div>
+    <div ref="AgeScreenTimeGraph"></div>
 
     <!-- Popup -->
     <!-- <div id="popup">
@@ -12,6 +12,12 @@
 </template>
 
 <script> 
+import * as d3 from "d3";
+
+export default {
+  
+}
+
 </script>
 
 <style scoped></style>
