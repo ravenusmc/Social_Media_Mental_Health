@@ -64,6 +64,26 @@ export default {
         .range([height, 0]);
       svg.append("g").call(d3.axisLeft(y));
 
+      // Bars
+      svg
+        .selectAll("rect")
+        .data(this.AgeVsScreenTimeData)
+        .enter()
+        .append("rect")
+        .attr("x", (d) => x(d[0]))
+        .attr("y", height)
+        .attr("width", x.bandwidth())
+        .attr("height", 0)
+        .attr("fill", "#121212")
+        .on("click", (event, d) => this.handleBarClick(d, event))
+        // .on("mouseover", showTooltip)
+        // .on("mousemove", moveTooltip)
+        // .on("mouseleave", hideTooltip)
+        .transition()
+        .duration(1500)
+        .attr("y", (d) => y(d[1]))
+        .attr("height", (d) => height - y(d[1]));
+
     }
   },
 }
