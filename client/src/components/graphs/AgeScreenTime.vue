@@ -64,6 +64,32 @@ export default {
         .range([height, 0]);
       svg.append("g").call(d3.axisLeft(y));
 
+      // Tooltip
+      const tooltip = d3
+        .select(this.$refs.AgeScreenTimeGraph)
+        .append("div")
+        .style("opacity", 0)
+        .attr("class", "tooltip")
+        .style("position", "absolute")
+        .style("background-color", "white")
+        .style("border", "1px solid #ccc")
+        .style("padding", "8px")
+        .style("border-radius", "5px");
+
+      const showTooltip = (event, d) => {
+        tooltip
+          .style("opacity", 1)
+          .html(`Cause of Death: ${d[0]}<br>Number of Deaths: ${d[1]}`)
+          .style("left", event.pageX + 10 + "px")
+          .style("top", event.pageY - 10 + "px");
+      };
+      const moveTooltip = (event) => {
+        tooltip.style("left", event.pageX + 10 + "px").style("top", event.pageY - 10 + "px");
+      };
+      const hideTooltip = () => {
+        tooltip.style("opacity", 0);
+      };
+
       // Bars
       svg
         .selectAll("rect")
@@ -76,9 +102,9 @@ export default {
         .attr("height", 0)
         .attr("fill", "#121212")
         .on("click", (event, d) => this.handleBarClick(d, event))
-        // .on("mouseover", showTooltip)
-        // .on("mousemove", moveTooltip)
-        // .on("mouseleave", hideTooltip)
+        .on("mouseover", showTooltip)
+        .on("mousemove", moveTooltip)
+        .on("mouseleave", hideTooltip)
         .transition()
         .duration(1500)
         .attr("y", (d) => y(d[1]))
