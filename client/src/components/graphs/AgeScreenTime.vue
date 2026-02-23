@@ -1,6 +1,5 @@
 <template>
   <div>
-    Graph
     <div ref="AgeScreenTimeGraph"></div>
 
     <!-- Popup -->
@@ -109,6 +108,32 @@ export default {
         .duration(1500)
         .attr("y", (d) => y(d[1]))
         .attr("height", (d) => height - y(d[1]));
+      
+      // Labels
+      svg
+        .append("text")
+        .attr("x", width / 2)
+        .attr("y", height + margin.bottom - 10)
+        .attr("text-anchor", "middle")
+        .attr("font-weight", "bold")
+        .text("Age Group");
+      
+      svg
+        .append("text")
+        .attr("transform", "rotate(-90)")
+        .attr("x", -height / 2)
+        .attr("y", -margin.left + 20)
+        .attr("text-anchor", "middle")
+        .attr("font-weight", "bold")
+        .text("Number of Hours");
+      
+      svg
+        .append("text")
+        .attr("x", width / 2)
+        .attr("y", -margin.top / 2 + 10)
+        .attr("text-anchor", "middle")
+        .attr("font-weight", "bold")
+        .text("Age vs Screen Time (Graph 1)");
 
     }
   },
