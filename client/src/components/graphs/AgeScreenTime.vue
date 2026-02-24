@@ -78,7 +78,7 @@ export default {
       const showTooltip = (event, d) => {
         tooltip
           .style("opacity", 1)
-          .html(`Cause of Death: ${d[0]}<br>Number of Deaths: ${d[1]}`)
+          .html(`Age Group: ${d[0]}<br>Number of hours: ${d[1]}`)
           .style("left", event.pageX + 10 + "px")
           .style("top", event.pageY - 10 + "px");
       };
