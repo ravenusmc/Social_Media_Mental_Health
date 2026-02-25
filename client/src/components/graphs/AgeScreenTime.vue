@@ -118,6 +118,7 @@ export default {
         .attr("font-weight", "bold")
         .text("Age Group");
       
+      // Y-Axis Label 
       svg
         .append("text")
         .attr("transform", "rotate(-90)")
@@ -127,6 +128,7 @@ export default {
         .attr("font-weight", "bold")
         .text("Number of Hours");
       
+      // Title 
       svg
         .append("text")
         .attr("x", width / 2)
