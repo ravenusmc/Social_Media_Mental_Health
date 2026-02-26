@@ -21,6 +21,9 @@ class ExamineData():
     for age_group, avg_screen_time in grouped.items():
       AgeVsScreenData.append([str(age_group), round(avg_screen_time, 2)])
     print(AgeVsScreenData)
+  
+  def screen_time_vs_happeniness(self):
+    pass
 
 
 
