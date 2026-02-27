@@ -23,7 +23,22 @@ class ExamineData():
     print(AgeVsScreenData)
   
   def screen_time_vs_happeniness(self):
-    pass
+    screenvshappiness = []
+
+
+# **Type:** Scatter Plot
+# **X-axis:** Daily_Screen_Time (hrs)
+# **Y-axis:** Happiness_Index
+
+# **Purpose:**
+# Shows whether more screen time is associated with higher or lower happiness.
+
+# **Insight You Might Find:**
+
+# * Negative trend → more screen time, less happiness
+# * Positive trend → screen time may not be harmful
+# * No pattern → weak relationship
+
 
 
 
