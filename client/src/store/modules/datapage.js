@@ -16,15 +16,29 @@ const data = {
 	['70-79', 0.0], 
 	['80-89', 0.0]
 ],
+	ScreenTimeVsHappiness: []
 
 }
 
 const getters = {
 	AgeVsScreenTimeData: (state) => state.AgeVsScreenTimeData,
+  ScreenTimeVsHappiness: (state) => state.ScreenTimeVsHappiness,
 };
 
 
 const actions = {
+
+  	grabGraphData: ({ commit }) => {
+      console.log('ACTION')
+		// const path = 'http://localhost:5000/getInitialDataForGraphs';
+		// axios.get(path)
+		// 	.then((res) => {
+		// 		commit('setHeatMapCauseLocationData', res.data['Heat_Map_Data'])
+		// 	})
+		// 	.catch((error) => {
+		// 		console.log(error);
+		// 	});
+	},
 };
 
 const mutations = {
