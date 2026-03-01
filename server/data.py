@@ -24,14 +24,8 @@ class ExamineData():
   
   def screen_time_vs_happeniness(self):
     screenvshappiness = []
-    screenvshappiness = list(
-        zip(
-            self.data['Daily_Screen_Time(hrs)'],
-            self.data['Happiness_Index(1-10)']
-        )
-    )
-    print(screenvshappiness)
-    # return screenvshappiness
+    screenvshappiness = self.data[['Daily_Screen_Time(hrs)', 'Happiness_Index(1-10)']].values.tolist()
+    return screenvshappiness
 
 
 

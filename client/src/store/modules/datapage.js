@@ -30,14 +30,14 @@ const actions = {
 
   	grabGraphData: ({ commit }) => {
       console.log('ACTION')
-		// const path = 'http://localhost:5000/getInitialDataForGraphs';
-		// axios.get(path)
-		// 	.then((res) => {
-		// 		commit('setHeatMapCauseLocationData', res.data['Heat_Map_Data'])
-		// 	})
-		// 	.catch((error) => {
-		// 		console.log(error);
-		// 	});
+		const path = 'http://localhost:5000/getInitialDataForGraphs';
+		axios.get(path)
+			.then((res) => {
+				commit('setHeatMapCauseLocationData', res.data['Heat_Map_Data'])
+			})
+			.catch((error) => {
+				console.log(error);
+			});
 	},
 };
 
