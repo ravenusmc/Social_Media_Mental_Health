@@ -28,12 +28,12 @@ const getters = {
 
 const actions = {
 
-  	grabGraphData: ({ commit }) => {
-      console.log('ACTION')
+  grabGraphData: ({ commit }) => {
 		const path = 'http://localhost:5000/getInitialDataForGraphs';
 		axios.get(path)
 			.then((res) => {
-				commit('setHeatMapCauseLocationData', res.data['Heat_Map_Data'])
+        console.log(res.data)
+				commit('setScreenTimeVsHappiness', res.data['Screen_vs_Happeniness'])
 			})
 			.catch((error) => {
 				console.log(error);
@@ -42,6 +42,10 @@ const actions = {
 };
 
 const mutations = {
+
+  setScreenTimeVsHappiness(state, value) {
+		state.ScreenTimeVsHappiness = value;
+	},
 };
 
 export default {

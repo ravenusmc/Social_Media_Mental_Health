@@ -17,7 +17,6 @@ CORS(app, resources={r'/*': {'origins': '*'}})
 @app.route('/getInitialDataForGraphs', methods=['GET'])
 def getInitialDataForGraphs():
     if request.method == 'GET':
-        print('here')
         data_dictionary = {}
         get_data_object = ExamineData()
         screen_time_vs_happeniness_data = get_data_object.screen_time_vs_happeniness()

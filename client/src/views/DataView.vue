@@ -21,8 +21,9 @@ export default {
     AgeScreenTime, 
     ScreenTimeVsHappiness,
   },
-  mounted() {
-    this.getDataForGraphs();
+  async created() {
+    await this.getDataForGraphs();
+    this.loading = false;
   },
   methods: {
     ...mapActions("datapage", ["grabGraphData"]),
