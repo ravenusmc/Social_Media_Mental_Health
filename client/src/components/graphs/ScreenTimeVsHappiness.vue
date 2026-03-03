@@ -1,6 +1,5 @@
 <template>
   <div>
-    {{ ScreenTimeVsHappiness }}
     <div ref="AgeScreenHappinessGraph"></div>
   </div>
 </template>
@@ -14,8 +13,14 @@ export default {
   computed: {
     ...mapGetters("datapage", ["ScreenTimeVsHappiness"]),
   },
+  watch: {
+    ScreenTimeVsHappiness: {
+      handler: "buildTimeVsHappinessGraph",
+      deep: true,
+    },
+  },
   mounted() {
-    this.buildAgeScreenTimeGraph();
+    this.buildTimeVsHappinessGraph();
   },
   beforeDestroy() {
     // Remove SVG and tooltips when leaving page
@@ -26,7 +31,7 @@ export default {
     if (popup) popup.style.display = "none";
   },
   methods: {
-    buildAgeScreenTimeGraph() {
+    buildTimeVsHappinessGraph() {
 
       // Remove old SVG
       d3.select(this.$refs.AgeScreenHappinessGraph).selectAll("*").remove();
@@ -75,6 +80,33 @@ export default {
         .attr("cx", d => x(d[0]))
         .attr("cy", d => y(d[1]))
         .attr("r", 4);
+      
+      svg
+        .append("text")
+        .attr("x", width / 2)
+        .attr("y", height + margin.bottom - 10)
+        .attr("text-anchor", "middle")
+        .attr("font-weight", "bold")
+        .text("Screen Time (Hours)");
+      
+      // Y-Axis Label 
+      svg
+        .append("text")
+        .attr("transform", "rotate(-90)")
+        .attr("x", -height / 2)
+        .attr("y", -margin.left + 20)
+        .attr("text-anchor", "middle")
+        .attr("font-weight", "bold")
+        .text("Happiness (1-10)");
+      
+      // Title 
+      svg
+        .append("text")
+        .attr("x", width / 2)
+        .attr("y", -margin.top / 2 + 10)
+        .attr("text-anchor", "middle")
+        .attr("font-weight", "bold")
+        .text("Screen Time Vs Happiness (Graph 2)");
 
     }
   }, 
