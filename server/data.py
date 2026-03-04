@@ -26,36 +26,25 @@ class ExamineData():
     screenvshappiness = []
     screenvshappiness = self.data[['Daily_Screen_Time(hrs)', 'Happiness_Index(1-10)']].values.tolist()
     return screenvshappiness
+  
+  def sleep_vs_stress(self):
+    sleep_vs_stress = []
+    sleep_vs_stress = self.data[['Sleep_Quality(1-10)', 'Stress_Level(1-10)']].values.tolist()
+    return sleep_vs_stress
 
-
-
-# **Type:** Scatter Plot
-# **X-axis:** Daily_Screen_Time (hrs)
-# **Y-axis:** Happiness_Index
-
-# **Purpose:**
-# Shows whether more screen time is associated with higher or lower happiness.
-
-# **Insight You Might Find:**
-
-# * Negative trend → more screen time, less happiness
-# * Positive trend → screen time may not be harmful
-# * No pattern → weak relationship
-
-
-
-
-## 📈 7. Age vs. Screen Time (Scatter Plot)
+## 😴 2. Sleep Quality vs. Stress Level (Scatter Plot)
 
 # **Type:** Scatter Plot
-# **X-axis:** Age
-# **Y-axis:** Daily_Screen_Time
+# **X-axis:** Sleep_Quality
+# **Y-axis:** Stress_Level
 
 # **Purpose:**
-# Shows generational differences in screen habits.
+# Explores whether better sleep relates to lower stress.
 
-# **Possible Finding:**
-# Younger users → more screen time
+# **Likely Hypothesis:**
+# Higher sleep → lower stress
+
+
 
 obj = ExamineData()
 obj.screen_time_vs_happeniness()

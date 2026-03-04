@@ -188,9 +188,9 @@ If this is for a project, you could frame it like this:
 
 Flow:
 
-1️⃣ Start: Age vs Screen Time
-2️⃣ Then: Screen Time vs Happiness
-3️⃣ Then: Sleep vs Stress
+1️⃣ Start: Age vs Screen Time - DONE 
+2️⃣ Then: Screen Time vs Happiness - DONE 
+3️⃣ Then: Sleep vs Stress 
 4️⃣ Then: Detox Days vs Stress
 5️⃣ Then: Exercise vs Happiness
 6️⃣ End: Platform Comparison
