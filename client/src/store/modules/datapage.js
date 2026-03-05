@@ -23,6 +23,7 @@ const data = {
 const getters = {
 	AgeVsScreenTimeData: (state) => state.AgeVsScreenTimeData,
   ScreenTimeVsHappiness: (state) => state.ScreenTimeVsHappiness,
+  sleep_vs_stress
 };
 
 
