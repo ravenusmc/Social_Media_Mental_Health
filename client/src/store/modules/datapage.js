@@ -26,7 +26,6 @@ const getters = {
   sleep_vs_stress
 };
 
-
 const actions = {
 
   grabGraphData: ({ commit }) => {
@@ -40,6 +39,8 @@ const actions = {
 				console.log(error);
 			});
 	},
+
+
 };
 
 const mutations = {
