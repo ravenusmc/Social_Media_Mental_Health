@@ -28,9 +28,9 @@ class ExamineData():
     return screenvshappiness
   
   def sleep_vs_stress(self):
-    sleep_vs_stress = []
-    sleep_vs_stress = self.data[['Sleep_Quality(1-10)', 'Stress_Level(1-10)']].values.tolist()
-    return sleep_vs_stress
+    sleep_vs_stress_data = []
+    sleep_vs_stress_data = self.data[['Sleep_Quality(1-10)', 'Stress_Level(1-10)']].values.tolist()
+    return sleep_vs_stress_data
 
 ## 😴 2. Sleep Quality vs. Stress Level (Scatter Plot)
 
@@ -47,4 +47,4 @@ class ExamineData():
 
 
 obj = ExamineData()
-obj.screen_time_vs_happeniness()
+obj.sleep_vs_stress()

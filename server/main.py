@@ -21,6 +21,8 @@ def getInitialDataForGraphs():
         get_data_object = ExamineData()
         screen_time_vs_happeniness_data = get_data_object.screen_time_vs_happeniness()
         data_dictionary['Screen_vs_Happeniness'] = screen_time_vs_happeniness_data
+        sleep_vs_stress = get_data_object.sleep_vs_stress()
+        data_dictionary['sleep_vs_stress'] = sleep_vs_stress
         return jsonify(data_dictionary)
 
 
