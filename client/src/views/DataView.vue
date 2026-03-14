@@ -3,6 +3,7 @@
     <Top></Top>
     <AgeScreenTime/>
     <ScreenTimeVsHappiness />
+    <SleepVsStress />
   </div>
 </template>
 
@@ -13,6 +14,7 @@ import { mapActions } from "vuex";
 import Top from '@/components/data/Top.vue'
 import AgeScreenTime from '@/components/graphs/AgeScreenTime.vue'
 import ScreenTimeVsHappiness from '@/components/graphs/ScreenTimeVsHappiness.vue'
+import SleepVsStress from '@/components/graphs/SleepVsStress.vue'
 
 export default {
   name: 'DataView',
@@ -20,6 +22,7 @@ export default {
     Top, 
     AgeScreenTime, 
     ScreenTimeVsHappiness,
+    SleepVsStress,
   },
   async created() {
     await this.getDataForGraphs();
