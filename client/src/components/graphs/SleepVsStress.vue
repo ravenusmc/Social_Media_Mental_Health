@@ -34,13 +34,56 @@ export default {
         .append("g")
         .attr("transform", `translate(${margin.left},${margin.top})`);
       
-      // X axis
-      const x = d3
-        .scaleBand()
-        .range([0, width])
-        .domain(this.sleepvsstressData.map((d) => d[0]))
-        .padding(0.2);
-      svg.append("g").attr("transform", `translate(0,${height})`).call(d3.axisBottom(x));
+      // X axis (Sleep Qaulity)
+      const x = d3.scaleLinear()
+        .domain([
+          d3.min(this.sleepvsstressData, d => d[0]),
+          d3.max(this.sleepvsstressData, d => d[0])
+        ])
+        .range([0, width]);
+      
+      svg.append("g")
+        .attr("transform", `translate(0,${height})`)
+        .call(d3.axisBottom(x));
+      
+      // Y axis (Stress)
+      const y = d3.scaleLinear()
+        .domain([
+          0,
+          d3.max(this.sleepvsstressData, d => d[1])
+        ])
+        .range([height, 0]);
+
+      svg.append("g")
+        .call(d3.axisLeft(y));
+      
+      // Add dots
+      svg.append("g")
+        .selectAll("circle")
+        .data(this.sleepvsstressData)
+        .enter()
+        .append("circle")
+        .attr("cx", d => x(d[0]))
+        .attr("cy", d => y(d[1]))
+        .attr("r", 4);
+      
+      svg
+        .append("text")
+        .attr("x", width / 2)
+        .attr("y", height + margin.bottom - 10)
+        .attr("text-anchor", "middle")
+        .attr("font-weight", "bold")
+        .text("Sleep Quality (10 - Great)");
+      
+      // Y-Axis Label 
+      svg
+        .append("text")
+        .attr("transform", "rotate(-90)")
+        .attr("x", -height / 2)
+        .attr("y", -margin.left + 20)
+        .attr("text-anchor", "middle")
+        .attr("font-weight", "bold")
+        .text("Stress (1-10)");
     }
   }
 }
