@@ -84,6 +84,16 @@ export default {
         .attr("text-anchor", "middle")
         .attr("font-weight", "bold")
         .text("Stress (1-10)");
+
+      // Title 
+      svg
+        .append("text")
+        .attr("x", width / 2)
+        .attr("y", -margin.top / 2 + 10)
+        .attr("text-anchor", "middle")
+        .attr("font-weight", "bold")
+        .text("Sleep Vs Stress (Graph 3)");
+
     }
   }
 }
