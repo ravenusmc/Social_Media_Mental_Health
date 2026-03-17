@@ -32,19 +32,20 @@ class ExamineData():
     sleep_vs_stress_data = self.data[['Sleep_Quality(1-10)', 'Stress_Level(1-10)']].values.tolist()
     return sleep_vs_stress_data
 
-## 😴 2. Sleep Quality vs. Stress Level (Scatter Plot)
-
-# **Type:** Scatter Plot
-# **X-axis:** Sleep_Quality
-# **Y-axis:** Stress_Level
-
-# **Purpose:**
-# Explores whether better sleep relates to lower stress.
-
-# **Likely Hypothesis:**
-# Higher sleep → lower stress
+  def detox_days_vs_happiness(self):
+    detox_days_vs_happiness = []
+  
 
 
+
+# Flow:
+
+# 1️⃣ Start: Age vs Screen Time - DONE 
+# 2️⃣ Then: Screen Time vs Happiness - DONE 
+# 3️⃣ Then: Sleep vs Stress 
+# 4️⃣ Then: Detox Days vs Stress
+# 5️⃣ Then: Exercise vs Happiness
+# 6️⃣ End: Platform Comparison
 
 obj = ExamineData()
 obj.sleep_vs_stress()
