@@ -38,7 +38,7 @@ class ExamineData():
 
 
 
-# Flow:
+# Graph flow: 
 
 # 1️⃣ Start: Age vs Screen Time - DONE 
 # 2️⃣ Then: Screen Time vs Happiness - DONE 
