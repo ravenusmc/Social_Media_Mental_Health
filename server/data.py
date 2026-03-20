@@ -34,6 +34,7 @@ class ExamineData():
 
   def detox_days_vs_happiness(self):
     detox_days_vs_happiness = []
+    detox_days_vs_happiness = 
     return detox_days_vs_happiness
 
 
