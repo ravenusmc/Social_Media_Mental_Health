@@ -34,7 +34,7 @@ class ExamineData():
 
   def detox_days_vs_happiness(self):
     detox_days_vs_happiness = []
-    detox_days_vs_happiness = 
+    detox_days_vs_happiness = self.data[['Days_Without_Social_Media', 'Happiness_Index(1-10)']].values.tolist()
     return detox_days_vs_happiness
 
 
@@ -43,10 +43,10 @@ class ExamineData():
 
 # 1️⃣ Start: Age vs Screen Time - DONE 
 # 2️⃣ Then: Screen Time vs Happiness - DONE 
-# 3️⃣ Then: Sleep vs Stress 
-# 4️⃣ Then: Detox Days vs Stress
+# 3️⃣ Then: Sleep vs Stress  - Done 
+# 4️⃣ Then: Detox Days vs Stress - Working 
 # 5️⃣ Then: Exercise vs Happiness
 # 6️⃣ End: Platform Comparison
 
 obj = ExamineData()
-obj.sleep_vs_stress()
+obj.detox_days_vs_happiness()

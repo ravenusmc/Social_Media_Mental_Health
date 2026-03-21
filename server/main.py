@@ -19,10 +19,15 @@ def getInitialDataForGraphs():
     if request.method == 'GET':
         data_dictionary = {}
         get_data_object = ExamineData()
+        # Setting Data 
         screen_time_vs_happeniness_data = get_data_object.screen_time_vs_happeniness()
         data_dictionary['Screen_vs_Happeniness'] = screen_time_vs_happeniness_data
+        # Setting Data 
         sleep_vs_stress = get_data_object.sleep_vs_stress()
         data_dictionary['sleep_vs_stress'] = sleep_vs_stress
+        # Setting Data 
+        detox_days_vs_happiness = get_data_object.detox_days_vs_happiness()
+        data_dictionary['detox_days_vs_happiness'] = detox_days_vs_happiness
         return jsonify(data_dictionary)
 
 

@@ -16,8 +16,9 @@ const data = {
 	['70-79', 0.0], 
 	['80-89', 0.0]
 ],
-	ScreenTimeVsHappiness: [],
+  ScreenTimeVsHappiness: [],
   sleepvsstressData: [],
+  detoxDaysVsHappiness: [],
 
 }
 
@@ -25,6 +26,8 @@ const getters = {
 	AgeVsScreenTimeData: (state) => state.AgeVsScreenTimeData,
   ScreenTimeVsHappiness: (state) => state.ScreenTimeVsHappiness,
   sleepvsstressData: (state) => state.sleepvsstressData, 
+  detoxDaysVsHappiness: (state) => state.detoxDaysVsHappiness
+
 };
 
 const actions = {
@@ -36,6 +39,7 @@ const actions = {
         console.log(res.data)
 				commit('setScreenTimeVsHappiness', res.data['Screen_vs_Happeniness'])
         commit('setSleepVsStressData', res.data['sleep_vs_stress'])
+        commit('setDetoxDaysVsHappiness', res.data['detox_days_vs_happiness'])
 			})
 			.catch((error) => {
 				console.log(error);
@@ -54,6 +58,10 @@ const mutations = {
   setSleepVsStressData(state, value) {
     state.sleepvsstressData = value; 
   },
+
+  setDetoxDaysVsHappiness(state, value) {
+    state.detoxDaysVsHappiness = value
+  }
 };
 
 export default {
