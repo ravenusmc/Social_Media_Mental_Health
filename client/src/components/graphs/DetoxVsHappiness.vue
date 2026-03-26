@@ -45,6 +45,34 @@ export default {
       svg.append("g")
         .attr("transform", `translate(0,${height})`)
         .call(d3.axisBottom(x));
+      
+      // Y axis (Stress)
+      const y = d3.scaleLinear()
+        .domain([
+          0,
+          d3.max(this.detoxDaysVsHappiness, d => d[1])
+        ])
+        .range([height, 0]);
+      svg.append("g")
+        .call(d3.axisLeft(y));
+      
+      // Add dots
+      svg.append("g")
+        .selectAll("circle")
+        .data(this.detoxDaysVsHappiness)
+        .enter()
+        .append("circle")
+        .attr("cx", d => x(d[0]))
+        .attr("cy", d => y(d[1]))
+        .attr("r", 4);
+      
+      svg
+        .append("text")
+        .attr("x", width / 2)
+        .attr("y", height + margin.bottom - 10)
+        .attr("text-anchor", "middle")
+        .attr("font-weight", "bold")
+        .text("Detox (10 - Great)");
 
       
     }
