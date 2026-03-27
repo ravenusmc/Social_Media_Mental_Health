@@ -73,6 +73,16 @@ export default {
         .attr("text-anchor", "middle")
         .attr("font-weight", "bold")
         .text("Detox (10 - Great)");
+      
+      // Y-Axis Label 
+      svg
+        .append("text")
+        .attr("transform", "rotate(-90)")
+        .attr("x", -height / 2)
+        .attr("y", -margin.left + 20)
+        .attr("text-anchor", "middle")
+        .attr("font-weight", "bold")
+        .text("Happeniness (1-10)");
 
       
     }
