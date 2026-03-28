@@ -34,7 +34,8 @@ class ExamineData():
 
   def detox_days_vs_happiness(self):
     detox_days_vs_happiness = []
-    detox_days_vs_happiness = self.data[['Days_Without_Social_Media', 'Happiness_Index(1-10)']].values.tolist()
+    detox_days_vs_happiness = self.data[['Days_Without_Social_Media', 'Stress_Level(1-10)']].values.tolist()
+    print(detox_days_vs_happiness)
     return detox_days_vs_happiness
 
 
