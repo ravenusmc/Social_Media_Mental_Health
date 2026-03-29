@@ -32,11 +32,10 @@ class ExamineData():
     sleep_vs_stress_data = self.data[['Sleep_Quality(1-10)', 'Stress_Level(1-10)']].values.tolist()
     return sleep_vs_stress_data
 
-  def detox_days_vs_happiness(self):
-    detox_days_vs_happiness = []
-    detox_days_vs_happiness = self.data[['Days_Without_Social_Media', 'Stress_Level(1-10)']].values.tolist()
-    print(detox_days_vs_happiness)
-    return detox_days_vs_happiness
+  def detox_days_vs_stress(self):
+    detox_days_vs_stress = []
+    detox_days_vs_stress  = self.data[['Days_Without_Social_Media', 'Stress_Level(1-10)']].values.tolist()
+    return detox_days_vs_stress 
 
 
 
@@ -50,4 +49,4 @@ class ExamineData():
 # 6️⃣ End: Platform Comparison
 
 obj = ExamineData()
-obj.detox_days_vs_happiness()
+obj.detox_days_vs_stress()

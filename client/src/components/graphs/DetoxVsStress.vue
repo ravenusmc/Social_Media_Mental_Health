@@ -11,7 +11,7 @@ import { mapGetters, mapActions } from "vuex";
 export default {
   name: "DetoxVsHappiness",
   computed: {
-    ...mapGetters("datapage", ["detoxDaysVsHappiness"]),
+    ...mapGetters("datapage", ["detoxDaysVsStress"]),
   },
   mounted() {
     this.buildDetoxVsHappinessGraph();
@@ -37,8 +37,8 @@ export default {
       // X axis (Detox)
       const x = d3.scaleLinear()
         .domain([
-          d3.min(this.detoxDaysVsHappiness, d => d[0]),
-          d3.max(this.detoxDaysVsHappiness, d => d[0])
+          d3.min(this.detoxDaysVsStress, d => d[0]),
+          d3.max(this.detoxDaysVsStress, d => d[0])
         ])
         .range([0, width]);
       
@@ -50,7 +50,7 @@ export default {
       const y = d3.scaleLinear()
         .domain([
           0,
-          d3.max(this.detoxDaysVsHappiness, d => d[1])
+          d3.max(this.detoxDaysVsStress, d => d[1])
         ])
         .range([height, 0]);
       svg.append("g")
@@ -59,7 +59,7 @@ export default {
       // Add dots
       svg.append("g")
         .selectAll("circle")
-        .data(this.detoxDaysVsHappiness)
+        .data(this.detoxDaysVsStress)
         .enter()
         .append("circle")
         .attr("cx", d => x(d[0]))
@@ -72,7 +72,7 @@ export default {
         .attr("y", height + margin.bottom - 10)
         .attr("text-anchor", "middle")
         .attr("font-weight", "bold")
-        .text("Detox (10 - Great)");
+        .text("Days without Social Media");
       
       // Y-Axis Label 
       svg
@@ -82,7 +82,7 @@ export default {
         .attr("y", -margin.left + 20)
         .attr("text-anchor", "middle")
         .attr("font-weight", "bold")
-        .text("Happeniness (1-10)");
+        .text("Stress (1-10)");
 
       // Title 
       svg
@@ -91,7 +91,7 @@ export default {
         .attr("y", -margin.top / 2 + 10)
         .attr("text-anchor", "middle")
         .attr("font-weight", "bold")
-        .text("Detox vs Happiness (Graph 4)");
+        .text("Detox vs Stress (Graph 4)");
       
     }
   }
