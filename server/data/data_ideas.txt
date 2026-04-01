@@ -191,7 +191,7 @@ Flow:
 1️⃣ Start: Age vs Screen Time - DONE 
 2️⃣ Then: Screen Time vs Happiness - DONE 
 3️⃣ Then: Sleep vs Stress - DONE
-4️⃣ Then: Detox Days vs Stress - Done 
+4️⃣ Then: Detox Days vs Stress - Done - may have to edit 
 5️⃣ Then: Exercise vs Happiness - Working 
 6️⃣ End: Platform Comparison
 
