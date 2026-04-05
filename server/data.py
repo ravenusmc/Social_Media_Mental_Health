@@ -36,6 +36,24 @@ class ExamineData():
     detox_days_vs_stress = []
     detox_days_vs_stress  = self.data[['Days_Without_Social_Media', 'Stress_Level(1-10)']].values.tolist()
     return detox_days_vs_stress 
+  
+  def exercise_vs_happiness(self):
+    exercise_vs_happiness = [] 
+    exercise_vs_happiness = self.data[['Exercise_Frequency(week)', 'Happiness_Index(1-10)']].values.tolist()
+    return exercise_vs_happiness
+
+
+#🏃 4. Exercise Frequency vs. Happiness (Scatter / Line)
+
+# **Type:** Scatter Plot (or Line if sorted)
+# **X-axis:** Exercise_Frequency (week)
+# **Y-axis:** Happiness_Index
+
+# **Purpose:**
+# Shows whether physical activity relates to happiness.
+
+# **Expected Pattern:**
+# More exercise → higher happiness
 
 
 
@@ -49,4 +67,4 @@ class ExamineData():
 # 6️⃣ End: Platform Comparison
 
 obj = ExamineData()
-obj.detox_days_vs_stress()
+obj.exercise_vs_happiness()
