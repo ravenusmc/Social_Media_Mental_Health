@@ -26,8 +26,11 @@ def getInitialDataForGraphs():
         sleep_vs_stress = get_data_object.sleep_vs_stress()
         data_dictionary['sleep_vs_stress'] = sleep_vs_stress
         # Setting Data 
-        detox_days_vs_stress  = get_data_object.detox_days_vs_stress()
+        detox_days_vs_stress = get_data_object.detox_days_vs_stress()
         data_dictionary['detox_days_vs_stress'] = detox_days_vs_stress 
+        # Setting Data 
+        exercise_vs_happiness = get_data_object.detox_days_vs_stress()
+        data_dictionary['exercise_vs_happiness'] = exercise_vs_happiness 
         return jsonify(data_dictionary)
 
 
