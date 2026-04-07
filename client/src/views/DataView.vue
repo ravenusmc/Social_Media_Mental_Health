@@ -5,6 +5,7 @@
     <ScreenTimeVsHappiness />
     <SleepVsStress />
     <DetoxVsStress />
+    <ExerciseVsHappiness />
   </div>
 </template>
 
@@ -17,6 +18,7 @@ import AgeScreenTime from '@/components/graphs/AgeScreenTime.vue'
 import ScreenTimeVsHappiness from '@/components/graphs/ScreenTimeVsHappiness.vue'
 import SleepVsStress from '@/components/graphs/SleepVsStress.vue'
 import DetoxVsStress from '@/components/graphs/DetoxVsStress.vue'
+import ExerciseVsHappiness from '@/components/graphs/ExerciseVsHappiness.vue'
 
 export default {
   name: 'DataView',
@@ -26,6 +28,7 @@ export default {
     ScreenTimeVsHappiness,
     SleepVsStress,
     DetoxVsStress,
+    ExerciseVsHappiness,
   },
   async created() {
     await this.getDataForGraphs();

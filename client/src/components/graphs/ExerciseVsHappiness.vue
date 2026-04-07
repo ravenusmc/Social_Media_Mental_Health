@@ -1,5 +1,6 @@
 <template>
   <div>
+    booh
     <div ref="ExerciseVsHappinessGraph"></div>
   </div>
 </template>
