@@ -35,6 +35,14 @@ export default {
         .attr("height", height + margin.top + margin.bottom)
         .append("g")
         .attr("transform", `translate(${margin.left},${margin.top})`);
+      
+      // X axis ()
+      const x = d3.scaleLinear()
+        .domain([
+          d3.min(this.ExerciseVsHappiness, d => d[0]),
+          d3.max(this.ExerciseVsHappiness, d => d[0])
+        ])
+        .range([0, width]);
 
     }
   }
