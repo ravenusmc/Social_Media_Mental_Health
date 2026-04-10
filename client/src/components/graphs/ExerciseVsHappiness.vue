@@ -43,6 +43,10 @@ export default {
           d3.max(this.ExerciseVsHappiness, d => d[0])
         ])
         .range([0, width]);
+      
+      svg.append("g")
+        .attr("transform", `translate(0,${height})`)
+        .call(d3.axisBottom(x));
 
     }
   }
