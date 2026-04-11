@@ -1,6 +1,5 @@
 <template>
   <div>
-    booh
     <div ref="ExerciseVsHappinessGraph"></div>
   </div>
 </template>
@@ -47,6 +46,27 @@ export default {
       svg.append("g")
         .attr("transform", `translate(0,${height})`)
         .call(d3.axisBottom(x));
+      
+      // Y axis (Stress)
+      const y = d3.scaleLinear()
+        .domain([
+          0,
+          d3.max(this.ExerciseVsHappiness, d => d[1])
+        ])
+        .range([height, 0]);
+
+      svg.append("g")
+        .call(d3.axisLeft(y));
+      
+      // Add dots
+      svg.append("g")
+        .selectAll("circle")
+        .data(this.ExerciseVsHappiness)
+        .enter()
+        .append("circle")
+        .attr("cx", d => x(d[0]))
+        .attr("cy", d => y(d[1]))
+        .attr("r", 4);
 
     }
   }

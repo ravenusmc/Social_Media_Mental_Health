@@ -37,7 +37,7 @@ const actions = {
 		const path = 'http://localhost:5000/getInitialDataForGraphs';
 		axios.get(path)
 			.then((res) => {
-        console.log(res.data)
+        // console.log(res.data)
 				commit('setScreenTimeVsHappiness', res.data['Screen_vs_Happeniness'])
         commit('setSleepVsStressData', res.data['sleep_vs_stress'])
         commit('setDetoxDaysVsStress', res.data['detox_days_vs_stress'])
