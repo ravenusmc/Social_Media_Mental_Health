@@ -41,6 +41,9 @@ class ExamineData():
     exercise_vs_happiness = [] 
     exercise_vs_happiness = self.data[['Exercise_Frequency(week)', 'Happiness_Index(1-10)']].values.tolist()
     return exercise_vs_happiness
+  
+  def social_media_graph(self):
+    social_media_data = []
 
 
 #🏃 4. Exercise Frequency vs. Happiness (Scatter / Line)
