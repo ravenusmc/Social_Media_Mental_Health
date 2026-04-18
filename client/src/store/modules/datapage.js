@@ -20,6 +20,14 @@ const data = {
   sleepvsstressData: [],
   detoxDaysVsStress: [],
   ExerciseVsHappiness: [],
+  socialMediaData: [
+    ['TikTok', 95], 
+    ['X (Twitter)', 88], 
+    ['LinkedIn', 87], 
+    ['Facebook', 81], 
+    ['YouTube', 75], 
+    ['Instagram', 74]
+  ],
 }
 
 const getters = {
@@ -28,7 +36,7 @@ const getters = {
   sleepvsstressData: (state) => state.sleepvsstressData, 
   detoxDaysVsStress: (state) => state.detoxDaysVsStress,
   ExerciseVsHappiness: (state) => state.ExerciseVsHappiness, 
-
+  socialMediaData: (state) => state.socialMediaData, 
 };
 
 const actions = {

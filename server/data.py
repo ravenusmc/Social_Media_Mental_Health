@@ -43,20 +43,14 @@ class ExamineData():
     return exercise_vs_happiness
   
   def social_media_graph(self):
-    social_media_data = []
+      social_media_data = []
+      social_media_series = self.data['Social_Media_Platform'].value_counts()
+      for platform, count in social_media_series.items():
+          social_media_data.append([platform, count])
+      print(social_media_data)
+      return social_media_data
 
 
-#🏃 4. Exercise Frequency vs. Happiness (Scatter / Line)
-
-# **Type:** Scatter Plot (or Line if sorted)
-# **X-axis:** Exercise_Frequency (week)
-# **Y-axis:** Happiness_Index
-
-# **Purpose:**
-# Shows whether physical activity relates to happiness.
-
-# **Expected Pattern:**
-# More exercise → higher happiness
 
 
 
@@ -70,4 +64,4 @@ class ExamineData():
 # 6️⃣ End: Platform Comparison
 
 obj = ExamineData()
-obj.exercise_vs_happiness()
+obj.social_media_graph()
