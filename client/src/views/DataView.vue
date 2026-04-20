@@ -6,6 +6,7 @@
     <SleepVsStress />
     <DetoxVsStress />
     <ExerciseVsHappiness />
+    <SocialMediaGraph />
   </div>
 </template>
 
@@ -19,6 +20,7 @@ import ScreenTimeVsHappiness from '@/components/graphs/ScreenTimeVsHappiness.vue
 import SleepVsStress from '@/components/graphs/SleepVsStress.vue'
 import DetoxVsStress from '@/components/graphs/DetoxVsStress.vue'
 import ExerciseVsHappiness from '@/components/graphs/ExerciseVsHappiness.vue'
+import SocialMediaGraph from '@/components/graphs/SocialMediaPlatform.vue'
 
 export default {
   name: 'DataView',
@@ -29,6 +31,7 @@ export default {
     SleepVsStress,
     DetoxVsStress,
     ExerciseVsHappiness,
+    SocialMediaGraph,
   },
   async created() {
     await this.getDataForGraphs();
