@@ -94,6 +94,15 @@ export default {
         .duration(1500)
         .attr("y", (d) => y(d[1]))
         .attr("height", (d) => height - y(d[1]));
+      
+      // Labels
+      svg
+        .append("text")
+        .attr("x", width / 2)
+        .attr("y", height + margin.bottom - 10)
+        .attr("text-anchor", "middle")
+        .attr("font-weight", "bold")
+        .text("Age Group");
 
     }
   }
