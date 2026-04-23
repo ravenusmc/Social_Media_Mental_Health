@@ -49,6 +49,9 @@ class ExamineData():
           social_media_data.append([platform, count])
       print(social_media_data)
       return social_media_data
+  
+  def social_media_graph_sum_of_hours(self):
+    pass
 
 
 
