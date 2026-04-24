@@ -51,7 +51,7 @@ class ExamineData():
       return social_media_data
   
   def social_media_graph_sum_of_hours(self):
-    pass
+    social_media_data_sum_of_hours = []
 
 
 
