@@ -50,6 +50,7 @@ class ExamineData():
       print(social_media_data)
       return social_media_data
   
+  # This graph will sum the number of hours for each social media platform
   def social_media_graph_sum_of_hours(self):
     social_media_data_sum_of_hours = []
 
