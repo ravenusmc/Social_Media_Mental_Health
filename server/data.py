@@ -53,6 +53,16 @@ class ExamineData():
   # This graph will sum the number of hours for each social media platform
   def social_media_graph_sum_of_hours(self):
     social_media_data_sum_of_hours = []
+    distinct_platforms = self.data['Social_Media_Platform'].unique()
+    for platform in distinct_platforms: 
+      df = self.data 
+      rows = []
+      filtered_df = df[df['Social_Media_Platform'] == platform]
+      sum_of_hours = float(filtered_df['Daily_Screen_Time(hrs)'].sum())
+      rows.append(platform)
+      rows.append(sum_of_hours)
+      social_media_data_sum_of_hours.append(rows)
+    print(social_media_data_sum_of_hours)
 
 
 
@@ -68,4 +78,4 @@ class ExamineData():
 # 6️⃣ End: Platform Comparison
 
 obj = ExamineData()
-obj.social_media_graph()
+obj.social_media_graph_sum_of_hours()

@@ -28,6 +28,14 @@ const data = {
     ['YouTube', 75], 
     ['Instagram', 74]
   ],
+  socialMediaHours: [
+    ['Facebook', 458.3], 
+    ['LinkedIn', 460.4], 
+    ['YouTube', 410.90000000000003], 
+    ['TikTok', 518.5], 
+    ['X (Twitter)', 467.0], 
+    ['Instagram', 449.9]
+  ], 
 }
 
 const getters = {
@@ -37,6 +45,7 @@ const getters = {
   detoxDaysVsStress: (state) => state.detoxDaysVsStress,
   ExerciseVsHappiness: (state) => state.ExerciseVsHappiness, 
   socialMediaData: (state) => state.socialMediaData, 
+  socialMediaHours: (state) => state.socialMediaHours, 
 };
 
 const actions = {
