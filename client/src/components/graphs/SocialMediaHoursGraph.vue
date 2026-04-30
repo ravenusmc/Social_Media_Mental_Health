@@ -1,7 +1,6 @@
 <template>
   <div>
     <div ref="SocialMediaHoursGraph"></div>
-    test
   </div>
 </template>
 
@@ -28,7 +27,7 @@ export default {
       const height = 400 - margin.top - margin.bottom;
 
       const svg = d3
-        .select(this.$refs.socialMediaHours)
+        .select(this.$refs.SocialMediaHoursGraph)
         .append("svg")
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
@@ -49,6 +48,83 @@ export default {
         .domain([0, d3.max(this.socialMediaHours, (d) => d[1])])
         .range([height, 0]);
       svg.append("g").call(d3.axisLeft(y));
+
+      // Tooltip
+      const tooltip = d3
+        .select(this.$refs.SocialMediaHoursGraph)
+        .append("div")
+        .style("opacity", 0)
+        .attr("class", "tooltip")
+        .style("position", "absolute")
+        .style("background-color", "white")
+        .style("border", "1px solid #ccc")
+        .style("padding", "8px")
+        .style("border-radius", "5px");
+
+      const showTooltip = (event, d) => {
+        tooltip
+          .style("opacity", 1)
+          .html(`Age Group: ${d[0]}<br>Number of hours: ${d[1]}`)
+          .style("left", event.pageX + 10 + "px")
+          .style("top", event.pageY - 10 + "px");
+      };
+      const moveTooltip = (event) => {
+        tooltip.style("left", event.pageX + 10 + "px").style("top", event.pageY - 10 + "px");
+      };
+      const hideTooltip = () => {
+        tooltip.style("opacity", 0);
+      };
+      
+      // Bars
+      svg
+        .selectAll("rect")
+        .data(this.socialMediaHours)
+        .enter()
+        .append("rect")
+        .attr("x", (d) => x(d[0]))
+        .attr("y", height)
+        .attr("width", x.bandwidth())
+        .attr("height", 0)
+        .attr("fill", "#121212")
+        .on("click", (event, d) => this.handleBarClick(d, event))
+        .on("mouseover", showTooltip)
+        .on("mousemove", moveTooltip)
+        .on("mouseleave", hideTooltip)
+        .transition()
+        .duration(1500)
+        .attr("y", (d) => y(d[1]))
+        .attr("height", (d) => height - y(d[1]));
+      
+      // Labels
+      // X - Axis 
+      svg
+        .append("text")
+        .attr("x", width / 2)
+        .attr("y", height + margin.bottom - 10)
+        .attr("text-anchor", "middle")
+        .attr("font-weight", "bold")
+        .text("Social Media Platform");
+      
+      // Y-Axis Label 
+      svg
+        .append("text")
+        .attr("transform", "rotate(-90)")
+        .attr("x", -height / 2)
+        .attr("y", -margin.left + 20)
+        .attr("text-anchor", "middle")
+        .attr("font-weight", "bold")
+        .text("Hours on Platform");
+      
+      // Title 
+      svg
+        .append("text")
+        .attr("x", width / 2)
+        .attr("y", -margin.top / 2 + 10)
+        .attr("text-anchor", "middle")
+        .attr("font-weight", "bold")
+        .text("Social Media Platform Hours (Graph 6)");
+
+
     },
   },
 }
