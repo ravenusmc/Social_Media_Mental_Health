@@ -124,7 +124,6 @@ export default {
         .attr("font-weight", "bold")
         .text("Social Media Platform Hours (Graph 6)");
 
-
     },
   },
 }
