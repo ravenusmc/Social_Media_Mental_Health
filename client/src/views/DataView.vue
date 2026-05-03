@@ -1,6 +1,7 @@
 <template>
   <div>
     <Top></Top>
+    <div class="graph-div">
     <AgeScreenTime/>
     <ScreenTimeVsHappiness />
     <SleepVsStress />
@@ -8,6 +9,7 @@
     <ExerciseVsHappiness />
     <SocialMediaGraph />
     <SocialMediaHoursGraph />
+    </div>
   </div>
 </template>
 
@@ -49,3 +51,13 @@ export default {
 }
 
 </script>
+
+<style scoped>
+
+.graph-div {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: 2%;
+}
+
+</style>
