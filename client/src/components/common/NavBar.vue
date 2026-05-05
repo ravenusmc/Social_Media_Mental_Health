@@ -6,11 +6,12 @@
         <router-link class="navlink link-style" to="/data">Data</router-link>
         <router-link class="navlink link-style" to="/about">About</router-link>
       </div>
-      <div class="navlinks-right">
+      <!-- Login features - may add at future date -->
+      <!-- <div class="navlinks-right">
         <router-link v-if="!loginFlag" class="navlink link-style" to="/login">Login</router-link>
         <router-link v-if="!loginFlag" class="navlink link-style" to="/signup">Sign Up</router-link>
         <a v-if="loginFlag" @click.prevent="logoutUser"><router-link  class="navlink link-style" to="/">Log Out</router-link></a>
-      </div>
+      </div> -->
     </nav>
   </div>
 </template>
