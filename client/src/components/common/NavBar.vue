@@ -24,12 +24,12 @@ export default {
   computed: {
     ...mapGetters("user", ["passwordNoMatch", "loginFlag"]),
   },
-  methods: {
-  ...mapActions("user", ["logout"]),
-  logoutUser: function () {
-    this.logout();
-    },
-  },
+  // methods: {
+  // ...mapActions("user", ["logout"]),
+  // logoutUser: function () {
+  //   this.logout();
+  //   },
+  // },
 }
 </script>
 

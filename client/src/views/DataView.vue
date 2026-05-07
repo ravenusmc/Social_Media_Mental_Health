@@ -45,6 +45,7 @@ export default {
   methods: {
     ...mapActions("datapage", ["grabGraphData"]),
     getDataForGraphs() {
+      console.log('dddd')
       this.grabGraphData()
     }, 
   }, 
