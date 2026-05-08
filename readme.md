@@ -10,6 +10,8 @@ simply as a good way to look at a decent, small dataset. We will see where it go
 Link for dataset: 
 https://www.kaggle.com/datasets/souvikahmed071/social-media-and-mental-health
 
+This project will not have a login feature. 
+
 
 # Getting started
 ### Installing
