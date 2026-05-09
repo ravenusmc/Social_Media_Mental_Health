@@ -15,7 +15,16 @@ export default {
     ...mapGetters("datapage", ["ExerciseVsHappiness"]),
   },
   mounted() {
-    this.buildExerciseVsHappinessGraph();
+    if (this.ExerciseVsHappiness.length) {
+      this.buildExerciseVsHappinessGraph();
+    }
+  },
+  watch: {
+    ExerciseVsHappiness(newVal) {
+      if (newVal.length) {
+        this.buildExerciseVsHappinessGraph();
+      }
+    }
   },
   methods: {
     buildExerciseVsHappinessGraph() {

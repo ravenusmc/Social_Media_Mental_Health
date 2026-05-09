@@ -14,7 +14,16 @@ export default {
     ...mapGetters("datapage", ["sleepvsstressData"]),
   },
   mounted() {
-    this.buildSleepVsStressGraph();
+    if (this.sleepvsstressData.length) {
+      this.buildSleepVsStressGraph();
+    }
+  },
+  watch: {
+    sleepvsstressData(newVal) {
+      if (newVal.length) {
+        this.buildSleepVsStressGraph();
+      }
+    }
   },
   methods: {
     buildSleepVsStressGraph() {

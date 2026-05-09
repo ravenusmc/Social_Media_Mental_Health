@@ -14,7 +14,16 @@ export default {
     ...mapGetters("datapage", ["detoxDaysVsStress"]),
   },
   mounted() {
-    this.buildDetoxVsHappinessGraph();
+    if (this.detoxDaysVsStress.length) {
+      this.buildDetoxVsHappinessGraph();
+    }
+  },
+  watch: {
+    detoxDaysVsStress(newVal) {
+      if (newVal.length) {
+        this.buildDetoxVsHappinessGraph();
+      }
+    }
   },
   methods: {
     buildDetoxVsHappinessGraph() {
