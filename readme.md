@@ -10,7 +10,7 @@ simply as a good way to look at a decent, small dataset. We will see where it go
 Link for dataset: 
 https://www.kaggle.com/datasets/souvikahmed071/social-media-and-mental-health
 
-This project will not have a login feature. 
+This project will not have a login feature. I was going to make this a bigger project but for now I'll put it aside for another project. 
 
 
 # Getting started
